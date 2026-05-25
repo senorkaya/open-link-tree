@@ -5,14 +5,19 @@ Self-hosted Linktree-Alternative mit **eingebautem Tracking**, **schönem Design
 Statisches Frontend (HTML + CSS + JS, kein Build), eigenes Analytics-Dashboard, optionales YouTube-Auto-Update für's neueste Video. Hosting auf Netlify, Vercel, Cloudflare Pages oder wo du sonst willst.
 
 <p align="center">
-  <img src=".github/preview/linktree-desktop.png" alt="Open Link Tree — Desktop Preview" width="720">
+  <img src=".github/preview/linktree-desktop.png" alt="Open Link Tree — Default Demo" width="720">
 </p>
+<p align="center"><sub>Default-Demo direkt nach <code>git clone</code></sub></p>
 
 <p align="center">
-  <a href="components.html"><img src=".github/preview/library.png" alt="Button Library" width="340"></a>
-  &nbsp;
-  <img src=".github/preview/linktree-mobile.png" alt="Open Link Tree — Mobile" width="200">
+  <img src=".github/preview/example-live.png" alt="Live-Beispiel" width="320">
 </p>
+<p align="center"><sub>Live in der Wildbahn — eigene Inhalte, eigene Marke, gleiche Codebase</sub></p>
+
+<p align="center">
+  <a href="components.html"><img src=".github/preview/library.png" alt="Button Library" width="860"></a>
+</p>
+<p align="center"><sub>Button-Style Library (<code>components.html</code>) — alle Varianten zum Anschauen und Kopieren</sub></p>
 
 ```
 links.deinedomain.com   ──▶  Open Link Tree (Frontend)
