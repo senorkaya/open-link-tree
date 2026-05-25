@@ -14,11 +14,6 @@ Statisches Frontend (HTML + CSS + JS, kein Build), eigenes Analytics-Dashboard, 
 </p>
 <p align="center"><sub>Live in der Wildbahn — eigene Inhalte, eigene Marke, gleiche Codebase</sub></p>
 
-<p align="center">
-  <a href="components.html"><img src=".github/preview/library.png" alt="Button Library" width="860"></a>
-</p>
-<p align="center"><sub>Button-Style Library (<code>components.html</code>) — alle Varianten zum Anschauen und Kopieren</sub></p>
-
 ```
 links.deinedomain.com   ──▶  Open Link Tree (Frontend)
                               │
@@ -58,6 +53,16 @@ netlify deploy --prod
 ```
 
 Oder einfach das Repo in Netlify/Vercel/Cloudflare Pages connecten — kein Build-Step nötig, publish dir ist Root.
+
+---
+
+## Button-Style Library
+
+Sechs vorgefertigte Button-Varianten in einem Stylesheet — Basic, Stacked, Outline, Highlight-Card, Video-Card und Product-Card. Du kombinierst sie frei, jede Variante wird auto-getrackt. Alle Snippets + Live-Vorschau in [`components.html`](components.html) (oder unter `/components.html` deployt).
+
+<p align="center">
+  <a href="components.html"><img src=".github/preview/library.png" alt="Button Library — alle Varianten mit Code-Snippets" width="860"></a>
+</p>
 
 ---
 
