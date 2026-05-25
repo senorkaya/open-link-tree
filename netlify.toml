@@ -1,6 +1,6 @@
 # ===================== NETLIFY DEPLOY CONFIG =====================
 #
-# Standard-Setup fuer Open Link Tree:
+# Standard-Setup für Open Link Tree:
 #  - Statisches Frontend aus dem Repo-Root (kein Build-Step)
 #  - Security-Header (HSTS, CSP, etc.) auf allen Routen
 #  - Edge Function /.netlify/functions/geo  (Country-Lookup)

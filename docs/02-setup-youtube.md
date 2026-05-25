@@ -2,7 +2,7 @@
 
 Du brauchst das nur, wenn du die **Video-Card** nutzen willst — die zeigt automatisch dein neuestes Longform-Video (>5 Min, filtert Shorts).
 
-Wenn du keine Video-Card willst, einfach den `<a id="latest-video-link">` Block aus `index.html` loeschen — `src/youtube.js` macht dann nichts.
+Wenn du keine Video-Card willst, einfach den `<a id="latest-video-link">` Block aus `index.html` löschen — `src/youtube.js` macht dann nichts.
 
 ---
 
@@ -10,31 +10,31 @@ Wenn du keine Video-Card willst, einfach den `<a id="latest-video-link">` Block 
 
 Channel ID hat das Format `UCxxxxxxxxxxxxxxxxxxxxxx` (24 Zeichen, beginnt mit `UC`).
 
-- Auf youtube.com → dein Kanal oeffnen
+- Auf youtube.com → dein Kanal öffnen
 - URL endet auf `/channel/UCxxxxx...` → das ist die ID
 - Wenn deine URL `youtube.com/@handle` ist: rechts oben Klicken → "Share channel" → "Copy channel ID"
 
 ## 2. Google Cloud Projekt + API Key
 
 1. https://console.cloud.google.com/ → Projekt anlegen ("My YouTube Linktree")
-2. Links im Menue → "APIs & Services" → "Library"
+2. Links im Menü → "APIs & Services" → "Library"
 3. "YouTube Data API v3" suchen → "Enable"
 4. Links → "Credentials" → "Create Credentials" → "API key"
 5. Den Key kopieren — er sieht aus wie `AIzaSy...` (39 Zeichen)
 
-## 3. Key restricten (WICHTIG fuer Security)
+## 3. Key restricten (WICHTIG für Security)
 
 Klick auf den neuen Key in der Credentials-Liste:
 
 **Application restrictions:**
-- "Websites" auswaehlen
-- Domains hinzufuegen:
-  - `*.netlify.app/*`  (fuer Preview-Deploys)
+- "Websites" auswählen
+- Domains hinzufügen:
+  - `*.netlify.app/*`  (für Preview-Deploys)
   - `links.deinedomain.com/*`  (deine Production-Domain)
 - Speichern
 
 **API restrictions:**
-- "Restrict key" auswaehlen
+- "Restrict key" auswählen
 - Nur "YouTube Data API v3" aktivieren
 - Speichern
 
@@ -44,7 +44,7 @@ Ohne diese Restrictions kann jeder mit Zugriff auf deinen Key deine Quota verbra
 
 Default: 10.000 Units/Tag (gratis).
 
-Unser Setup verbraucht **~5.760 Units/Tag** fuer 2 Channels mit 60-Sekunden-Refresh:
+Unser Setup verbraucht **~5.760 Units/Tag** für 2 Channels mit 60-Sekunden-Refresh:
 - `playlistItems.list` = 1 Unit, `videos.list` = 1 Unit = 2 Units pro Refresh
 - 60 Refreshes/h * 24h * 2 Units * 2 Channels = 5.760
 
@@ -85,23 +85,23 @@ const ALLOWED_HOSTS = [
 ];
 ```
 
-Das ist eine zusaetzliche Schutzschicht: fremde Domains koennen die Function nicht aufrufen, selbst wenn sie deine URL erraten.
+Das ist eine zusätzliche Schutzschicht: fremde Domains können die Function nicht aufrufen, selbst wenn sie deine URL erraten.
 
 ## 8. Test
 
 1. Deployen
-2. Frontend oeffnen — die Video-Card sollte nach ~1-2 Sekunden Thumbnail + Titel zeigen
+2. Frontend öffnen — die Video-Card sollte nach ~1-2 Sekunden Thumbnail + Titel zeigen
 3. Falls nicht: Netlify Function Logs anschauen (Site → "Logs" → "Functions" → `latest-video`)
 
 Typische Fehler:
-- `403 forbidden` → ALLOWED_HOSTS passt nicht, Domain ergaenzen
+- `403 forbidden` → ALLOWED_HOSTS passt nicht, Domain ergänzen
 - `500 YOUTUBE_API_KEY not configured` → Env Var nicht gesetzt oder Site nicht neu deployed
 - `502 youtube playlist: ...` → API-Key Restriction blockiert, Key-Permissions checken
 - `404 no longform video found` → Kanal hat keine Videos > 5 Min, oder `MIN_DURATION_SECONDS` reduzieren
 
 ## Anpassen
 
-**Andere Mindestlaenge** (z.B. nur >10 Min):
+**Andere Mindestlänge** (z.B. nur >10 Min):
 ```js
 const MIN_DURATION_SECONDS = 600;
 ```

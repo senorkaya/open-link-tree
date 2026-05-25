@@ -1,8 +1,18 @@
 # Open Link Tree
 
-Self-hosted Linktree-Alternative mit **eingebautem Tracking**, **schoenem Design** und **Agent-First Setup**.
+Self-hosted Linktree-Alternative mit **eingebautem Tracking**, **schönem Design** und **Agent-First Setup**.
 
-Statisches Frontend (HTML + CSS + JS, kein Build), eigenes Analytics-Dashboard, optionales YouTube-Auto-Update fuer's neueste Video. Hosting auf Netlify, Vercel, Cloudflare Pages oder wo du sonst willst.
+Statisches Frontend (HTML + CSS + JS, kein Build), eigenes Analytics-Dashboard, optionales YouTube-Auto-Update für's neueste Video. Hosting auf Netlify, Vercel, Cloudflare Pages oder wo du sonst willst.
+
+<p align="center">
+  <img src=".github/preview/linktree-desktop.png" alt="Open Link Tree — Desktop Preview" width="720">
+</p>
+
+<p align="center">
+  <a href="components.html"><img src=".github/preview/library.png" alt="Button Library" width="340"></a>
+  &nbsp;
+  <img src=".github/preview/linktree-mobile.png" alt="Open Link Tree — Mobile" width="200">
+</p>
 
 ```
 links.deinedomain.com   ──▶  Open Link Tree (Frontend)
@@ -16,10 +26,10 @@ links.deinedomain.com   ──▶  Open Link Tree (Frontend)
 ## Was das von anderen Open-Source-Linktrees unterscheidet
 
 - **Eingebautes Backend-Tracking.** Klicks und Views landen in deiner eigenen Supabase-DB. Cookieless, DSGVO-freundlich, kein Banner-Pflicht. Andere OSS-Linktrees haben das nicht.
-- **Mitgeliefertes Dashboard.** KPIs, Activity Chart, Top Links, Laender, Devices. Eigenes Repo nicht noetig.
+- **Mitgeliefertes Dashboard.** KPIs, Activity Chart, Top Links, Länder, Devices. Eigenes Repo nicht nötig.
 - **YouTube Auto-Update.** Video-Card zeigt automatisch dein neuestes Longform-Video. Server-side gecached, Quota-safe.
-- **Schoenes Design.** Phone-Frame Look auf Desktop, Fullscreen auf Mobile. Highlight-Cards mit Bild + CTA, Stacked Buttons, Outline Buttons, Product Cards. Komplette Library in [`components.html`](components.html).
-- **Agent-First.** Jede Datei dokumentiert sich selbst. Setup-Guides in `docs/`. `AGENTS.md` als Master-Brief fuer Claude/Cursor — du kopierst eine Anleitung, KI baut alles drumherum.
+- **Schönes Design.** Phone-Frame Look auf Desktop, Fullscreen auf Mobile. Highlight-Cards mit Bild + CTA, Stacked Buttons, Outline Buttons, Product Cards. Komplette Library in [`components.html`](components.html).
+- **Agent-First.** Jede Datei dokumentiert sich selbst. Setup-Guides in `docs/`. `AGENTS.md` als Master-Brief für Claude/Cursor — du kopierst eine Anleitung, KI baut alles drumherum.
 
 ---
 
@@ -33,7 +43,7 @@ python3 -m http.server 8000
 # Oder:  npx serve .
 ```
 
-Oeffne `http://localhost:8000` — du siehst die Demo. Editiere `index.html`, um deine Links einzutragen.
+Öffne `http://localhost:8000` — du siehst die Demo. Editiere `index.html`, um deine Links einzutragen.
 
 Deploy auf Netlify:
 ```bash
@@ -42,16 +52,16 @@ npm i -g netlify-cli
 netlify deploy --prod
 ```
 
-Oder einfach das Repo in Netlify/Vercel/Cloudflare Pages connecten — kein Build-Step noetig, publish dir ist Root.
+Oder einfach das Repo in Netlify/Vercel/Cloudflare Pages connecten — kein Build-Step nötig, publish dir ist Root.
 
 ---
 
 ## Setup mit Tracking + Dashboard (20-30 Minuten)
 
-Schritt-fuer-Schritt-Guides in `docs/`:
+Schritt-für-Schritt-Guides in `docs/`:
 
 1. [`01-setup-supabase.md`](docs/01-setup-supabase.md) — Supabase Projekt erstellen, Tabelle + RLS-Policies anlegen
-2. [`02-setup-youtube.md`](docs/02-setup-youtube.md) — YouTube Data API Key holen und konfigurieren (optional, nur fuer Video-Card)
+2. [`02-setup-youtube.md`](docs/02-setup-youtube.md) — YouTube Data API Key holen und konfigurieren (optional, nur für Video-Card)
 3. [`03-setup-tracking.md`](docs/03-setup-tracking.md) — Tracking aktivieren via Meta-Tags
 4. [`04-button-styles.md`](docs/04-button-styles.md) — Alle Button-Varianten + wann was passt
 5. [`05-deploy-netlify.md`](docs/05-deploy-netlify.md) — Frontend + Dashboard auf Netlify
@@ -66,7 +76,7 @@ Wenn du mit Claude / Cursor / einem AI-Agent arbeitest: gib der KI [`AGENTS.md`]
 ```
 open-link-tree/
 ├── README.md
-├── AGENTS.md                       ← Master-Brief fuer AI-Coding-Tools
+├── AGENTS.md                       ← Master-Brief für AI-Coding-Tools
 ├── LICENSE                         ← MIT
 ├── index.html                      ← Deine Linktree-Seite
 ├── components.html                 ← Button-Style Library (Live-Demo)
@@ -80,7 +90,7 @@ open-link-tree/
 │   ├── background-placeholder.svg
 │   └── video-placeholder.svg
 ├── netlify/
-│   ├── edge-functions/geo.js       ← Country-Lookup ueber Netlify-Geo
+│   ├── edge-functions/geo.js       ← Country-Lookup über Netlify-Geo
 │   └── functions/latest-video.js   ← YouTube-API-Proxy (server-side)
 ├── dashboard/
 │   ├── index.html                  ← Analytics Dashboard
@@ -98,7 +108,7 @@ open-link-tree/
 - **Frontend:** Pure HTML / CSS / JS — kein React, kein Build, kein npm.
 - **Tracking:** [Supabase](https://supabase.com) (kostenlos bis 500 MB DB + 5 GB Egress / Monat).
 - **Charts:** [Chart.js](https://www.chartjs.org/) via CDN — nur im Dashboard.
-- **Hosting:** Netlify empfohlen wegen Edge Functions fuer Geo-Lookup. Funktioniert aber auch auf Vercel, Cloudflare Pages, GitHub Pages (ohne Tracking-Country) — Details in `docs/06`.
+- **Hosting:** Netlify empfohlen wegen Edge Functions für Geo-Lookup. Funktioniert aber auch auf Vercel, Cloudflare Pages, GitHub Pages (ohne Tracking-Country) — Details in `docs/06`.
 
 ---
 
@@ -106,14 +116,14 @@ open-link-tree/
 
 Das Tracking ist bewusst minimal:
 
-- **Keine Cookies** — kein Banner noetig.
+- **Keine Cookies** — kein Banner nötig.
 - **Keine IP-Speicherung** — Country wird von der Netlify Edge Function berechnet, IP nie an die DB gesendet.
 - **Kein User-Agent**, nur "mobile" oder "desktop".
 - **Keine eindeutige Besucher-ID**, keine Cross-Site-Tracker.
 
 Was gespeichert wird: `event_type`, `link_name`, `channel`, `country`, `referrer`, `device`, `utm_source`, `created_at`.
 
-In Deutschland/EU brauchst du dafuer kein Consent-Banner (cookieless + anonym). Bitte aber trotzdem in deiner Datenschutzerklaerung erwaehnen, dass du eigenes Analytics nutzt.
+In Deutschland/EU brauchst du dafür kein Consent-Banner (cookieless + anonym). Bitte aber trotzdem in deiner Datenschutzerklärung erwähnen, dass du eigenes Analytics nutzt.
 
 ---
 

@@ -3,8 +3,8 @@
 # Statisches Frontend + Netlify Function als Supabase-Proxy.
 # Sicherheits-Setup empfohlen:
 #   1. Dieses Site in Netlify auf Password-Protection stellen (Plan: Pro+)
-#      Sonst kann jeder das Dashboard mit deinen Daten oeffnen.
-#   2. ODER: Netlify Identity / Cloudflare Access davorhaengen.
+#      Sonst kann jeder das Dashboard mit deinen Daten öffnen.
+#   2. ODER: Netlify Identity / Cloudflare Access davorhängen.
 #
 # Env Vars (Site settings → Environment variables):
 #   SUPABASE_URL

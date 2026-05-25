@@ -2,13 +2,13 @@
 
 Live-Vorschau aller Varianten: **`components.html`** (deployt unter `/components.html`).
 
-## Welcher Style fuer was?
+## Welcher Style für was?
 
-| Style | Wofuer | Klasse |
+| Style | Wofür | Klasse |
 |-------|--------|--------|
 | Basic | Standard-Link, neutral | `link-button` |
 | Stacked | Newsletter, Substack, Community (Title + Subtitle) | `link-button link-button--stacked` |
-| Outline | Sekundaer-Option neben Highlight-Card | `link-button link-button--outline` |
+| Outline | Sekundär-Option neben Highlight-Card | `link-button link-button--outline` |
 | Highlight Card | Hauptangebot, Beratung buchen, Top-CTA | `consulting-card` |
 | Video Card | Aktuelles YouTube-Video (auto-update) | `video-card` |
 | Product Card | Affiliate, Empfehlung, Produkt mit Bild | `product-card` (in `.products`) |
@@ -16,10 +16,10 @@ Live-Vorschau aller Varianten: **`components.html`** (deployt unter `/components
 ## Wann welche?
 
 - **Genau 1x Highlight Card** pro Seite — sonst ist nichts mehr Highlight.
-- **Hoechstens 2-3 Stacked Buttons** — zu viele Untertitel werden visuell unruhig.
-- **Outline-Buttons** funktionieren am besten direkt unter einer Highlight-Card als Sekundaer-Option ("Bist du nicht sicher? Hier mehr lesen").
-- **Video Card** kommt typisch nach den primaeren CTAs, aber vor "evergreen"-Links wie Newsletter.
-- **Product Cards** standardmaessig versteckt (`display: none` auf `.products`) — aktivieren wenn du Empfehlungen rein willst.
+- **Höchstens 2-3 Stacked Buttons** — zu viele Untertitel werden visuell unruhig.
+- **Outline-Buttons** funktionieren am besten direkt unter einer Highlight-Card als Sekundär-Option ("Bist du nicht sicher? Hier mehr lesen").
+- **Video Card** kommt typisch nach den primären CTAs, aber vor "evergreen"-Links wie Newsletter.
+- **Product Cards** standardmäßig versteckt (`display: none` auf `.products`) — aktivieren wenn du Empfehlungen rein willst.
 
 ## Snippets
 
@@ -70,7 +70,7 @@ Live-Vorschau aller Varianten: **`components.html`** (deployt unter `/components
 </a>
 ```
 
-Bild fuer die Highlight Card: in `src/styles.css` die Zeile
+Bild für die Highlight Card: in `src/styles.css` die Zeile
 ```css
 .consulting-card__img { background-image: url('../assets/avatar-placeholder.svg'); ... }
 ```
@@ -97,7 +97,7 @@ auf deine eigene Datei umstellen, z.B. `url('../assets/mein-foto.webp')`.
 </a>
 ```
 
-Voraussetzung: YouTube Setup aus `02-setup-youtube.md` durchgefuehrt. IDs `latest-video-link`, `latest-video-thumb`, `latest-video-title` NICHT umbenennen — daran haengt das Script.
+Voraussetzung: YouTube Setup aus `02-setup-youtube.md` durchgeführt. IDs `latest-video-link`, `latest-video-thumb`, `latest-video-title` NICHT umbenennen — daran hängt das Script.
 
 ### Product Card
 ```html
@@ -110,7 +110,7 @@ Voraussetzung: YouTube Setup aus `02-setup-youtube.md` durchgefuehrt. IDs `lates
 </a>
 ```
 
-Aktivieren: in `src/styles.css` `.products { display: none; }` aendern zu `display: block;`.
+Aktivieren: in `src/styles.css` `.products { display: none; }` ändern zu `display: block;`.
 
 ## Farben und Look anpassen
 
@@ -123,13 +123,13 @@ Alle Farben + Typo + Radius stehen in `:root` von `src/styles.css`:
     --color-accent: #c8a882;       /* Akzentfarbe */
     --radius: 12px;                /* Button-Rundung */
     --phone-width: 420px;          /* Frame-Breite Desktop */
-    --phone-height: 90vh;          /* Frame-Hoehe Desktop */
+    --phone-height: 90vh;          /* Frame-Höhe Desktop */
 }
 ```
 
-Aendere die Werte, und alle Buttons + Cards + Backgrounds passen sich an.
+Ändere die Werte, und alle Buttons + Cards + Backgrounds passen sich an.
 
-## Neue Variante hinzufuegen
+## Neue Variante hinzufügen
 
 Wenn du z.B. eine Glass-Variante willst:
 

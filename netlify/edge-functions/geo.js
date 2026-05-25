@@ -1,14 +1,14 @@
 /*
  * ===================== GEO LOOKUP =====================
  *
- * Liefert den ISO-Country-Code des Besuchers — komplett ueber Netlify's
+ * Liefert den ISO-Country-Code des Besuchers — komplett über Netlify's
  * eigene Geo-Erkennung. Kein Drittanbieter, keine IP-Speicherung, keine
  * personenbezogenen Daten.
  *
  * Aufruf: GET /.netlify/functions/geo  →  { "country": "DE" }
  *
  * Auf anderen Hostern: einfach durch eine eigene Country-Lookup-Function
- * ersetzen, die das gleiche JSON-Format zurueckgibt.
+ * ersetzen, die das gleiche JSON-Format zurückgibt.
  */
 
 export default async (request, context) => {

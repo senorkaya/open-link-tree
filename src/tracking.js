@@ -10,18 +10,18 @@
  *   <meta name="olt:channel"           content="de">      // oder en, demo, ...
  *
  * Wenn supabase-url ODER supabase-anon-key leer sind, wird Tracking
- * komplett deaktiviert (sicher fuer lokale Demo).
+ * komplett deaktiviert (sicher für lokale Demo).
  *
  * Supabase-Tabelle: link_events
  * Spalten: event_type, link_name, channel, country, referrer, device, utm_source, created_at
  * SQL: siehe docs/01-setup-supabase.md
  *
  * UTM-Support: ?utm_source=instagram landet in beiden Spalten
- * (utm_source UND referrer-Override). Nuetzlich, wenn TikTok/Instagram-Apps
+ * (utm_source UND referrer-Override). Nützlich, wenn TikTok/Instagram-Apps
  * keinen HTTP-Referrer senden.
  *
  * Country wird via Netlify Edge Function (/.netlify/functions/geo)
- * ermittelt. Wenn die Function fehlt, faellt der Wert auf "unknown" zurueck.
+ * ermittelt. Wenn die Function fehlt, fällt der Wert auf "unknown" zurück.
  */
 
 (function () {

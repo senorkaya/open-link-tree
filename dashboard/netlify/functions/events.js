@@ -7,19 +7,19 @@
  *
  * Aufruf: GET /api/events?channel=de&range=28
  *   channel = de | en | all
- *   range   = Tage rueckwaerts (0 = all-time)
+ *   range   = Tage rückwärts (0 = all-time)
  *
  * Env Vars (in Netlify Dashboard setzen):
  *   SUPABASE_URL        = https://xxxxx.supabase.co
  *   SUPABASE_SECRET_KEY = sb_secret_... (NICHT der Anon-Key!)
  *
  * Pagination: Supabase hat db-max-rows (Default 1.000). Damit auch
- * lange Zeitraeume vollstaendig geladen werden, holen wir die Daten
+ * lange Zeiträume vollständig geladen werden, holen wir die Daten
  * in 1.000er-Batches via PostgREST Range-Header.
  */
 
 const PAGE_SIZE  = 1000;
-const SAFETY_CAP = 200000; // Hard stop fuer riesige Datenmengen
+const SAFETY_CAP = 200000; // Hard stop für riesige Datenmengen
 
 export default async (req) => {
     const SUPABASE_URL        = process.env.SUPABASE_URL;

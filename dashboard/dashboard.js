@@ -3,9 +3,9 @@
  *
  * Liest link_events aus Supabase und zeigt:
  *   - KPI Cards (Views, Clicks, CTR)
- *   - Activity Chart (Views + Clicks ueber Zeit, Chart.js)
+ *   - Activity Chart (Views + Clicks über Zeit, Chart.js)
  *   - Most Clicked Links (Ranking mit Balken)
- *   - Visitor Summary (Laender mit Flaggen, Referrer, Devices)
+ *   - Visitor Summary (Länder mit Flaggen, Referrer, Devices)
  *
  * Filter: Channel (de/en/all) und Zeitraum (7/28/90/365/all).
  *

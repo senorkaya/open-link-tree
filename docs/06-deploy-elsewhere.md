@@ -1,6 +1,6 @@
 # 06 — Deploy auf anderen Hostern
 
-Funktioniert ueberall, wo statische Seiten gehostet werden. Mit Einschraenkungen, wenn du Server-Functions brauchst.
+Funktioniert überall, wo statische Seiten gehostet werden. Mit Einschränkungen, wenn du Server-Functions brauchst.
 
 | Hoster | Frontend | Geo-Lookup | YouTube-Proxy | Dashboard-Proxy |
 |--------|----------|------------|---------------|-----------------|
@@ -26,7 +26,7 @@ Functions umbauen: Vercel API Routes leben unter `/api/`. Du musst:
 - `netlify/edge-functions/geo.js` → `api/geo.js` (Vercel hat `req.geo` via headers, leicht anderes API)
 - `dashboard/netlify/functions/events.js` → `dashboard/api/events.js`
 
-Code-Aenderungen sind minimal — beide Plattformen nutzen Web-Standard-Request/Response.
+Code-Änderungen sind minimal — beide Plattformen nutzen Web-Standard-Request/Response.
 
 Env Vars: Project Settings → "Environment Variables".
 
@@ -49,7 +49,7 @@ Env Vars: Pages-Project → "Settings" → "Environment variables".
 
 ## GitHub Pages
 
-Funktioniert NUR fuer reines Frontend (kein Tracking, kein YouTube, kein Dashboard) — es gibt keine Server-Funktionen.
+Funktioniert NUR für reines Frontend (kein Tracking, kein YouTube, kein Dashboard) — es gibt keine Server-Funktionen.
 
 1. Repo → Settings → Pages → Source: `main` branch, folder `/ (root)`
 2. Domain: optional
@@ -98,6 +98,6 @@ Wenn du KEINE Functions willst (z.B. nur GitHub Pages):
 
 - **Tracking deaktivieren**: Meta-Tags leer lassen (`src/tracking.js` deaktiviert sich selber).
 - **Video-Card weglassen**: `<a id="latest-video-link">` aus `index.html` entfernen.
-- **Dashboard separat hosten**: braucht Function fuer Supabase-Proxy, kann nicht auf GitHub Pages.
+- **Dashboard separat hosten**: braucht Function für Supabase-Proxy, kann nicht auf GitHub Pages.
 
-Dann ist es ein 100% statisches HTML-Projekt, deploybar ueberall (S3, IPFS, ein USB-Stick mit Webserver — egal).
+Dann ist es ein 100% statisches HTML-Projekt, deploybar überall (S3, IPFS, ein USB-Stick mit Webserver — egal).

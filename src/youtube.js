@@ -6,7 +6,7 @@
  *
  * Architektur:
  *   Browser  →  /.netlify/functions/latest-video?channel=de|en
- *            →  YouTube Data API (Key bleibt server-side, Quota geschuetzt)
+ *            →  YouTube Data API (Key bleibt server-side, Quota geschützt)
  *
  * Wenn KEIN <a id="latest-video-link"> auf der Seite ist, macht dieses
  * Script nichts. Du brauchst es also nur, wenn du die Video-Card nutzt.

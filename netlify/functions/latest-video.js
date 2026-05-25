@@ -7,7 +7,7 @@
  *   { videoId, title, thumbnail }
  *
  * Warum nicht direkt aus dem Browser? → API-Key bleibt server-seitig,
- * Quota wird durch CDN-Cache geschuetzt.
+ * Quota wird durch CDN-Cache geschützt.
  *
  * Quota-Setup:
  *   - Uploads-Playlist statt search.list (Channel UCxxx → UUxxx).
@@ -15,11 +15,11 @@
  *   - CDN-Cache 60s mit stale-while-revalidate=24h.
  *   - 60 Refreshes/h * 24h * 2 Units * 2 Channels ≈ 5.760 Units/Tag,
  *     <60% des Default-Quotas (10.000) — und User sehen neue Videos
- *     spaetestens 1 Min nach Upload.
+ *     spätestens 1 Min nach Upload.
  *
  * ===================== KONFIGURATION =====================
  *
- * 1) CHANNELS-Mapping unten: deine Kanaele eintragen
+ * 1) CHANNELS-Mapping unten: deine Kanäle eintragen
  *    Format:  '<channel-key-aus-data-channel>': 'UC...'
  *
  * 2) ALLOWED_HOSTS: deine Production-Domain(s) eintragen

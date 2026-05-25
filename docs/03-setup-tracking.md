@@ -23,7 +23,7 @@ In `index.html` (und ggf. weiteren Sprach-Varianten wie `englisch/index.html`) d
 <meta name="olt:channel"           content="de">
 ```
 
-Sind diese leer, deaktiviert sich das Script selber (sicher fuer lokale Demo).
+Sind diese leer, deaktiviert sich das Script selber (sicher für lokale Demo).
 
 In `netlify.toml` muss die CSP-Direktive `connect-src` deine Supabase-Domain erlauben:
 ```toml
@@ -37,7 +37,7 @@ Jedes Element, dessen Klicks getrackt werden sollen, braucht `data-link="..."` �
 ```html
 <a href="https://mein-substack.com"
    class="link-button"
-   data-link="Newsletter"          <!-- Name fuer's Dashboard -->
+   data-link="Newsletter"          <!-- Name für's Dashboard -->
    target="_blank" rel="noopener">
     <span class="link-button__text">Newsletter</span>
 </a>
@@ -56,7 +56,7 @@ links.deinedomain.com/englisch/?utm_source=tiktok
 
 Das macht 2 Dinge:
 1. Wird in der Spalte `utm_source` gespeichert
-2. **Ueberschreibt den `referrer`** — wichtig, weil mobile Apps wie TikTok/Instagram oft keinen HTTP-Referrer senden. Ohne UTM steht da sonst nur "direct".
+2. **Überschreibt den `referrer`** — wichtig, weil mobile Apps wie TikTok/Instagram oft keinen HTTP-Referrer senden. Ohne UTM steht da sonst nur "direct".
 
 ## Mehrere Sprachen / Channels
 
@@ -75,7 +75,7 @@ Browser DevTools → Network → Filter `link_events`:
 
 Status `201 Created` = alles gut. `401` = Anon-Key falsch oder RLS-Policy fehlt.
 
-In Supabase Dashboard → "Table Editor" → `link_events` → sollte sich live fuellen.
+In Supabase Dashboard → "Table Editor" → `link_events` → sollte sich live füllen.
 
 ## Was NICHT getrackt wird
 
@@ -85,4 +85,4 @@ In Supabase Dashboard → "Table Editor" → `link_events` → sollte sich live 
 - Keine Maus-Bewegungen, kein Scrollen, kein Session-Recording
 - Keine personenbezogenen Daten
 
-In deiner Datenschutzerklaerung kannst du das genau so beschreiben.
+In deiner Datenschutzerklärung kannst du das genau so beschreiben.

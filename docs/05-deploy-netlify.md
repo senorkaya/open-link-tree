@@ -2,7 +2,7 @@
 
 Netlify ist der einfachste Weg, weil Edge Functions (Geo-Lookup) und normale Functions (YouTube/Supabase-Proxy) ohne Extra-Setup laufen.
 
-Gratis-Plan reicht fuer typische Linktree-Use-Cases.
+Gratis-Plan reicht für typische Linktree-Use-Cases.
 
 ---
 
@@ -18,11 +18,11 @@ netlify init   # Folge dem Wizard: neues Site oder existing
 netlify deploy --prod
 ```
 
-### Option B: GitHub-Verknuepfung
+### Option B: GitHub-Verknüpfung
 
 1. Repo auf GitHub pushen
 2. https://app.netlify.com/ → "Add new site" → "Import from Git"
-3. Repository auswaehlen
+3. Repository auswählen
 4. Build settings: leer lassen (kein Build-Step)
 5. Publish directory: `.` (Root)
 6. Deploy
@@ -30,7 +30,7 @@ netlify deploy --prod
 ### Option C: Drag & Drop
 
 1. https://app.netlify.com/ → "Sites" → Zip des Repos reinziehen
-2. Hat den Nachteil: keine automatischen Re-Deploys bei Aenderungen
+2. Hat den Nachteil: keine automatischen Re-Deploys bei Änderungen
 
 ---
 
@@ -42,7 +42,7 @@ Site → "Site settings" → "Environment variables" → "Add a variable":
 YOUTUBE_API_KEY = AIzaSy...         (nur wenn Video-Card genutzt wird)
 ```
 
-Nach dem Hinzufuegen die Site neu deployen, damit die Functions die Variable sehen.
+Nach dem Hinzufügen die Site neu deployen, damit die Functions die Variable sehen.
 
 ---
 
@@ -74,7 +74,7 @@ netlify deploy --prod
 
 Wenn du das Dashboard auch im selben Repo deployen willst:
 1. Neuen Site in Netlify
-2. Repository auswaehlen
+2. Repository auswählen
 3. Publish directory: `dashboard`
 
 ### Env Vars im Dashboard-Site
@@ -84,11 +84,11 @@ SUPABASE_URL        = https://xxxxx.supabase.co
 SUPABASE_SECRET_KEY = sb_secret_...    (Service-Role-Key aus Supabase Settings)
 ```
 
-### Dashboard schuetzen (WICHTIG!)
+### Dashboard schützen (WICHTIG!)
 
 Sonst kann jeder mit der URL deine Daten sehen.
 
-**Option 1: Netlify Password-Protection** (Plan: Pro oder hoeher)
+**Option 1: Netlify Password-Protection** (Plan: Pro oder höher)
 - Site → "Access control" → "Site protection" → Password setzen
 
 **Option 2: Netlify Identity** (gratis, mehr Aufwand)
@@ -102,8 +102,8 @@ Sonst kann jeder mit der URL deine Daten sehen.
 
 ---
 
-## Re-Deploy nach Aenderungen
+## Re-Deploy nach Änderungen
 
-- Bei GitHub-Verknuepfung: einfach pushen → Netlify deployed automatisch
+- Bei GitHub-Verknüpfung: einfach pushen → Netlify deployed automatisch
 - Mit CLI: `netlify deploy --prod` im Repo-Folder
-- Bei Env-Var-Aenderungen: manuell "Trigger deploy" → "Deploy site" klicken, sonst sehen die Functions die neuen Werte nicht
+- Bei Env-Var-Änderungen: manuell "Trigger deploy" → "Deploy site" klicken, sonst sehen die Functions die neuen Werte nicht

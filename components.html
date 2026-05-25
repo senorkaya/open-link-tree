@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Library-spezifisches Styling — ueberschreibt das Phone-Frame Layout */
+        /* Library-spezifisches Styling — überschreibt das Phone-Frame Layout */
         body {
             background: #f5f0eb;
             display: block;
@@ -129,7 +129,7 @@
 
             <pre class="lib__snippet">&lt;a href="<b>https://...</b>"
    class="link-button"
-   data-link="<b>Name fuers Tracking</b>"
+   data-link="<b>Name fürs Tracking</b>"
    target="_blank" rel="noopener"&gt;
     &lt;span class="link-button__text"&gt;<b>Button-Text</b>&lt;/span&gt;
 &lt;/a&gt;</pre>
@@ -138,12 +138,12 @@
         <!-- ===================== STACKED ===================== -->
         <section class="lib__section">
             <h2 class="lib__section-title">2. Stacked Button</h2>
-            <p class="lib__section-desc">Titel + Untertitel auf zwei Zeilen. Gut fuer Newsletter, Substack, Communities.</p>
+            <p class="lib__section-desc">Titel + Untertitel auf zwei Zeilen. Gut für Newsletter, Substack, Communities.</p>
 
             <div class="lib__preview"><div class="lib__preview-inner">
                 <a href="#" class="link-button link-button--stacked" data-link="Demo: Stacked">
                     <span class="link-button__text">Newsletter</span>
-                    <span class="link-button__subtitle">Woechentliche Insights und Updates</span>
+                    <span class="link-button__subtitle">Wöchentliche Insights und Updates</span>
                 </a>
             </div></div>
 
@@ -162,7 +162,7 @@
             <p class="lib__section-desc">Transparent mit weissem Rand. Setzt Akzente, wenn du mehrere weisse Buttons hast.</p>
 
             <div class="lib__preview"><div class="lib__preview-inner">
-                <a href="#" class="link-button link-button--outline" data-link="Demo: Outline"><span class="link-button__text">Sekundaerer Link</span></a>
+                <a href="#" class="link-button link-button--outline" data-link="Demo: Outline"><span class="link-button__text">Sekundärer Link</span></a>
             </div></div>
 
             <pre class="lib__snippet">&lt;a href="<b>https://...</b>"
@@ -178,7 +178,7 @@
         <section class="lib__section">
             <h2 class="lib__section-title">4. Highlight Card</h2>
             <p class="lib__section-desc">
-                Foto links, Eyebrow + Titel + Subtext + CTA rechts. Fuer dein wichtigstes Angebot
+                Foto links, Eyebrow + Titel + Subtext + CTA rechts. Für dein wichtigstes Angebot
                 — Beratung buchen, Hauptprodukt kaufen, Kurs starten.
             </p>
 
@@ -187,8 +187,8 @@
                     <div class="consulting-card__img" role="img" aria-label="Highlight"></div>
                     <div class="consulting-card__content">
                         <div class="consulting-card__eyebrow">1:1 mit dir</div>
-                        <div class="consulting-card__title">Persoenliche Beratung</div>
-                        <div class="consulting-card__sub">Ein Satz, der den Wert erklaert</div>
+                        <div class="consulting-card__title">Persönliche Beratung</div>
+                        <div class="consulting-card__sub">Ein Satz, der den Wert erklärt</div>
                         <div class="consulting-card__cta">Termin sichern &rarr;</div>
                     </div>
                 </a>
@@ -207,7 +207,7 @@
     &lt;/div&gt;
 &lt;/a&gt;</pre>
             <p class="lib__hint">
-                Bild aendern: in <code>src/styles.css</code> bei <code>.consulting-card__img</code>
+                Bild ändern: in <code>src/styles.css</code> bei <code>.consulting-card__img</code>
                 das <code>background-image</code> auf deine eigene Datei umstellen
                 (z.B. <code>url('../assets/dein-bild.webp')</code>).
             </p>
@@ -217,7 +217,7 @@
         <section class="lib__section">
             <h2 class="lib__section-title">5. Video Card (YouTube Auto-Update)</h2>
             <p class="lib__section-desc">
-                Zeigt automatisch dein neuestes Longform-Video (Default: ueber 5 Min, Shorts werden
+                Zeigt automatisch dein neuestes Longform-Video (Default: über 5 Min, Shorts werden
                 gefiltert). Thumbnail + Titel werden serverseitig via YouTube API geholt
                 und am CDN gecached, damit du im API-Quota bleibst.
             </p>
@@ -259,7 +259,7 @@
         <!-- ===================== PRODUCT CARD ===================== -->
         <section class="lib__section">
             <h2 class="lib__section-title">6. Product Card</h2>
-            <p class="lib__section-desc">Bild links, Text rechts. Fuer Empfehlungen, Affiliate-Links, Buecher, Tools.</p>
+            <p class="lib__section-desc">Bild links, Text rechts. Für Empfehlungen, Affiliate-Links, Bücher, Tools.</p>
 
             <div class="lib__preview"><div class="lib__preview-inner" style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 8px;">
                 <a href="#" class="product-card" data-link="Demo: Product" style="display: flex;">
@@ -276,9 +276,9 @@
     &lt;span class="product-card__text"&gt;<b>Produkt-Name</b>&lt;/span&gt;
 &lt;/a&gt;</pre>
             <p class="lib__hint">
-                Produkt-Sektion ist standardmaessig versteckt. Aktivieren: in
+                Produkt-Sektion ist standardmäßig versteckt. Aktivieren: in
                 <code>src/styles.css</code> die Zeile <code>.products { display: none; }</code>
-                aendern zu <code>display: block;</code>.
+                ändern zu <code>display: block;</code>.
             </p>
         </section>
 
@@ -296,7 +296,7 @@
 <i>// Klick auf einen Link mit data-link="Newsletter"</i>
 { event_type: "click", link_name: "Newsletter", channel: "de", ... }</pre>
             <p class="lib__hint">
-                Details: <code>docs/03-setup-tracking.md</code>. SQL fuer die Tabelle:
+                Details: <code>docs/03-setup-tracking.md</code>. SQL für die Tabelle:
                 <code>docs/01-setup-supabase.md</code>.
             </p>
         </section>
