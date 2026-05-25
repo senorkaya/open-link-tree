@@ -1,0 +1,165 @@
+/* ===================== DASHBOARD STYLES ===================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --color-bg: #f8f9fb;
+    --color-white: #ffffff;
+    --color-text: #1a1a2e;
+    --color-text-light: #6b7280;
+    --color-border: #e5e7eb;
+    --color-accent: #6366f1;
+    --color-accent-light: #eef2ff;
+    --color-green: #10b981;
+    --color-red: #ef4444;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: var(--font);
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.header__title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+.header__controls { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.filter-group {
+    display: flex;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font);
+    border: none;
+    background: transparent;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.filter-btn:hover { color: var(--color-text); background: var(--color-bg); }
+.filter-btn--active,
+.filter-btn--active:hover { background: var(--color-accent); color: white; }
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.kpi-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+}
+.kpi-card__label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+}
+.kpi-card__value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+.card__title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+.card__subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.card__subtitle:first-of-type { margin-top: 0; }
+
+.chart-container { position: relative; height: 280px; }
+
+.top-links__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.top-links__item:last-child { border-bottom: none; }
+.top-links__name { font-size: 14px; font-weight: 500; }
+.top-links__stats { display: flex; align-items: center; gap: 12px; }
+.top-links__count { font-size: 14px; font-weight: 600; }
+.top-links__pct {
+    font-size: 12px;
+    color: var(--color-text-light);
+    min-width: 40px;
+    text-align: right;
+}
+.top-links__bar-wrap {
+    width: 80px;
+    height: 6px;
+    background: var(--color-bg);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.top-links__bar {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.stat-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+.stat-list__label { font-size: 14px; }
+.stat-list__value { font-size: 14px; font-weight: 600; }
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.bottom-row .card { margin-bottom: 0; }
+
+.placeholder { color: var(--color-text-light); font-size: 14px; }
+
+@media (max-width: 768px) {
+    .kpis { grid-template-columns: 1fr; }
+    .bottom-row { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; }
+}

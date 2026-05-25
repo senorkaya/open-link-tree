@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Link Tree — Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+    <div class="app">
+
+        <header class="header">
+            <h1 class="header__title">Open Link Tree</h1>
+            <div class="header__controls">
+                <div class="filter-group">
+                    <button class="filter-btn filter-btn--active" data-channel="all">All</button>
+                    <button class="filter-btn" data-channel="de">DE</button>
+                    <button class="filter-btn" data-channel="en">EN</button>
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn" data-range="7">7d</button>
+                    <button class="filter-btn filter-btn--active" data-range="28">28d</button>
+                    <button class="filter-btn" data-range="90">90d</button>
+                    <button class="filter-btn" data-range="365">365d</button>
+                    <button class="filter-btn" data-range="0">All</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="kpis">
+            <div class="kpi-card">
+                <span class="kpi-card__label">Views</span>
+                <span class="kpi-card__value" id="kpi-views">—</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-card__label">Clicks</span>
+                <span class="kpi-card__value" id="kpi-clicks">—</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-card__label">Click Rate</span>
+                <span class="kpi-card__value" id="kpi-ctr">—</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="card__title">Activity</h2>
+            <div class="chart-container">
+                <canvas id="activity-chart"></canvas>
+            </div>
+        </section>
+
+        <div class="bottom-row">
+            <section class="card">
+                <h2 class="card__title">Most Clicked Links</h2>
+                <div id="top-links" class="top-links">
+                    <p class="placeholder">Loading...</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="card__title">Visitors</h2>
+
+                <h3 class="card__subtitle">Top Countries</h3>
+                <div id="top-countries" class="stat-list">
+                    <p class="placeholder">Loading...</p>
+                </div>
+
+                <h3 class="card__subtitle">Traffic Sources</h3>
+                <div id="top-referrers" class="stat-list">
+                    <p class="placeholder">Loading...</p>
+                </div>
+
+                <h3 class="card__subtitle">Devices</h3>
+                <div id="device-split" class="stat-list">
+                    <p class="placeholder">Loading...</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# ===================== NETLIFY DEPLOY CONFIG =====================
+#
+# Standard-Setup fuer Open Link Tree:
+#  - Statisches Frontend aus dem Repo-Root (kein Build-Step)
+#  - Security-Header (HSTS, CSP, etc.) auf allen Routen
+#  - Edge Function /.netlify/functions/geo  (Country-Lookup)
+#  - Serverless Function /.netlify/functions/latest-video (YouTube Proxy)
+#
+# WICHTIG: Wenn du Tracking aktivierst, musst du deine Supabase-Domain in
+# der `connect-src` Directive der CSP eintragen (siehe unten). Sonst
+# blockiert der Browser den Tracking-Request.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options          = "DENY"
+    X-Content-Type-Options   = "nosniff"
+    Referrer-Policy          = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy       = "camera=(), microphone=(), geolocation=()"
+
+    # Content-Security-Policy
+    # Wenn du Supabase nutzt: deine Project-URL in connect-src eintragen, z.B.
+    #   connect-src 'self' https://xxxxx.supabase.co
+    Content-Security-Policy = "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://i.ytimg.com https://i9.ytimg.com https://*.ytimg.com data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"

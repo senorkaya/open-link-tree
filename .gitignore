@@ -1,0 +1,23 @@
+# Mac/Editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Node (falls jemand mit CLI tools arbeitet)
+node_modules/
+
+# Netlify CLI
+.netlify/
+
+# Env files — falls jemand das aus Versehen anlegt
+.env
+.env.local
+.env.*.local
+
+# Build outputs (sollte es nicht geben — wir haben keinen Build)
+dist/
+build/
+
+# Logs
+*.log

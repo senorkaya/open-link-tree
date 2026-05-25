@@ -1,0 +1,24 @@
+# ===================== DASHBOARD NETLIFY CONFIG =====================
+#
+# Statisches Frontend + Netlify Function als Supabase-Proxy.
+# Sicherheits-Setup empfohlen:
+#   1. Dieses Site in Netlify auf Password-Protection stellen (Plan: Pro+)
+#      Sonst kann jeder das Dashboard mit deinen Daten oeffnen.
+#   2. ODER: Netlify Identity / Cloudflare Access davorhaengen.
+#
+# Env Vars (Site settings → Environment variables):
+#   SUPABASE_URL
+#   SUPABASE_SECRET_KEY
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options          = "DENY"
+    X-Content-Type-Options   = "nosniff"
+    Referrer-Policy          = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy       = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy  = "default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"
